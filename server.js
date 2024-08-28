@@ -14,7 +14,7 @@ app.use('/uploads', express.static('uploads')); // Serve static files from 'uplo
 
 
 
-mongoose.connect(mongoDB_URL, {
+mongoose.connect(process.env.mongoDB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected'))
