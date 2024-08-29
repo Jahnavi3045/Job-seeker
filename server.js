@@ -12,7 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve static files from 'uploads' directory
 
-
+app.get('/',(req,res)=>{
+  res.send("hello");
+})
 
 mongoose.connect(process.env.mongoDB_URL, {
   useNewUrlParser: true,
