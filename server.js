@@ -8,6 +8,15 @@ const jobRoutes = require('./routes/jobRoutes');
 dotenv.config();
 
 const app = express();
+
+const corsOptions = {
+  origin: 'https://job-seeker-frontend-production.up.railway.app', // Replace with your frontend's URL
+  optionsSuccessStatus: 200 // For some legacy browsers
+};
+app.use(cors(corsOptions));
+// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve static files from 'uploads' directory
